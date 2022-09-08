@@ -1,0 +1,41 @@
+# Copyright 2022 Edward Bates <gitmux@stemux.com>
+# Distributed under the terms of the GNU General Public License v2
+
+require xfont
+
+SUMMARY="Versatile typeface for code, from code."
+DESCRIPTION="Iosevka is an open-source, sans-serif + slab-serif, monospace + quasi‑proportional typeface family, designed for writing code, using in terminals, and preparing technical documents.
+"
+HOMEPAGE="https://typeof.net/Iosevka/"
+DOWNLOADS="
+    providers:default?
+    ( https://github.com/be5invis/Iosevka/releases/download/v${PV}/super-ttc-iosevka-${PV}.zip )
+    providers:slab?
+    ( https://github.com/be5invis/Iosevka/releases/download/v${PV}/super-ttc-iosevka-slab-${PV}.zip )
+    providers:curly?
+    ( https://github.com/be5invis/Iosevka/releases/download/v${PV}/super-ttc-iosevka-curly-${PV}.zip )
+    providers:curly-slab?
+    ( https://github.com/be5invis/Iosevka/releases/download/v${PV}/super-ttc-iosevka-curly-${PV}.zip )
+"
+
+LICENCES="OFL-1.1"
+SLOT="0"
+MYOPTIONS="
+    ( providers:
+        curly
+        curly-slab
+        default
+        slab
+    ) [[
+        *description = [ Font design ]
+        number-selected = at-least-one
+    ]]
+"
+
+WORK=${WORKBASE}
+
+src_install() {
+    insinto /usr/share/fonts/X11/${PN}
+    doins *.ttc
+}
+
