@@ -1,0 +1,25 @@
+# Copyright 2022 Edward Bates <wymux@stemux.com>
+# Distributed under the terms of the GNU General Public License v2
+
+require github [ user='PrismLauncher' ]
+
+SUMMARY="A custom launcher for Minecraft that allows you to easily manage multiple installations of Minecraft at once (Fork of MultiMC)"
+DESCRIPTION="
+This is a fork of the MultiMC Launcher and not endorsed by MultiMC.
+"
+
+LICENCES="GPL-3"
+SLOT="0"
+PLATFORMS="~amd64 ~x86"
+
+DEPENDENCIES="
+    run:
+        qtbase:5
+"
+
+src_install() {
+    dobin ${WORK}/bin/prismlauncher
+    insinto /usr/$(exhost --target)/share
+    doins -r ${WORK}/share/
+}
+
