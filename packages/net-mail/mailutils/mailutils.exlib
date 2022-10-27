@@ -1,0 +1,74 @@
+# Copyright 2022 Edward Bates <gitmux@stemux.com>
+# Distributed under the terms of the GNU General Public License v2
+
+SUMMARY="General-Purpose Mail Package"
+DESCRIPTION="
+Mailutils is a swiss army knife of electronic mail handling. It offers a rich set of utilities and daemons for processing e-mail.
+All Mailutils programs are able to operate on mailboxes of any existing format, ranging from standard UNIX maildrops, through maildir and up to remote mailboxes, which are transparently accessed using IMAP4, POP3 and SMTP.
+"
+
+require gnu [ suffix='tar.xz' ]
+
+LICENCES="GPL-3"
+SLOT="0"
+MYOPTIONS="
+    fribidi                 [[ description = [ Allow mailutils to display right to left text ] ]]
+    gnutls
+    gsasl                   [[ description = [ Allow mailutils to interpret GSASL keywords ] ]]
+    ldap                    [[ description = [ Allow mailutils to authenticate with LDAP ] ]]
+    pam                     [[ description = [ Allow mailutils to authenticate with PAM ] ]]
+    postgres                [[ description = [ Allow mailutils to interface with PostgreSQL ] ]]
+    python                  [[ description = [ Allow mailutils to filter mail through Python ] ]]
+    tcp-wrappers            [[ description = [ Allow connections from remote machines to mailutils ] ]]
+    unistring
+    ( providers:
+        berkely       [[ description = [ Allow mailutils to interface with BerkelyDB ] ]]
+        gdbm          [[ description = [ Allow mailutils to interface with GDBM ] ]]
+        ndbm          [[ description = [ Allow mailutils to interface with NDBM ] ]]
+        tokyo         [[ description = [ Allow mailutils to interface with Tokyocabinet ] ]]
+    )
+"
+
+DEPENDENCIES="
+    build+run:
+        sys-libs/readline:=
+        fribidi? ( dev-lib/fribidi )
+        gnutls? ( dev-libs/gnutls[>=1.2.1] )
+        gsasl? ( net-libs/gsasl[>=0.2.3] )
+        ldap? ( net-directory/openldap )
+        pam? ( sys-libs/pam )
+        postgres? ( dev-db/postgresql:= )
+        python? ( dev-lang/python[>=3.0] )
+        unistring? ( dev-libs/libunistring:= )
+        providers:berkely? ( dev-db/BerkelyDB:= )
+        providers:gdbm? ( sys-libs/gdbm )
+        providers:tokyo? ( dev-db/tokyocabinet )
+"
+
+DEFAULT_SRC_CONFIGURE_PARAMS=(
+    --disable-experimental
+    --enable-build-clients
+    --enable-build-servers
+    --enable-pthread
+    --with-readline
+    --without-dbm
+    --without-kyotocabinet
+    --without-mysql
+    --without-odbc
+    --without-radius
+)
+
+DEFAULT_SRC_CONFIGURE_OPTION_WITHS=(
+    'fribidi'
+    'gnutls'
+    'gsasl'
+    'ldap'
+    'postgres'
+    'python'
+    'unistring'
+    'providers:berkely berkely-db'
+    'providers:gdbm gdbm'
+    'providers:ndbm ndbm'
+    'providers:tokyo tokyocabinet'
+)
+
