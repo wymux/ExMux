@@ -1,0 +1,24 @@
+# Copyright 2022 Edward Bates <gitmux@stemux.com>
+# Distributed under the terms of the GNU General Public License v2
+
+require github [ branch='makefile' user='TheGitMux' ]
+SUMMARY="A screenshot tool"
+
+LICENCES="Unlicense"
+SLOT="0"
+PLATFORMS="~amd64 ~x86"
+
+DEPENDENCIES="
+    build+run:
+        media-libs/libpng
+        x11-libs/libX11
+    suggestion:
+        x11-misc/slop
+"
+
+src_install() {
+    emake install \
+          PREFIX="${IMAGE}"/usr/$(exhost --target) \
+          MANPREFIX="${IMAGE}"/usr/share/man
+}
+
