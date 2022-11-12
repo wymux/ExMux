@@ -1,0 +1,21 @@
+# Copyright 2022 Edward Bates <gitmux@stemux.com>
+# Distributed under the terms of the GNU General Public License v2
+
+require github [ user='ful1e5' project='Bibata_Cursor' ]
+
+SUMMARY="Open source, compact, and material designed cursor set."
+DESCRIPTION="
+This cursor set is the masterpiece of cursors available on the internet, Hand designed by Abdulkaiz Khatri.
+"
+DOWNLOADS="https://github.com/ful1e5/Bibata_Cursor/releases/download/v${PV}/Bibata.tar.gz"
+LICENCES="GPL-3"
+SLOT="0"
+PLATFORMS="~amd64 ~x86"
+
+WORK="${WORKBASE}"
+
+src_install() {
+    insinto /usr/share/icons/Bibata/
+    doins -r Bibata-*
+}
+
