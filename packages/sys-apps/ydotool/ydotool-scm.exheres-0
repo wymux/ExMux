@@ -1,0 +1,22 @@
+# Copyright 2022 Edward Bates <gitmux@stemux.com>
+# Distributed under the terms of the GNU General Public License v2
+
+require cmake \
+        github [ user='ReimuNotMoe' ]
+
+SUMMARY="Generic command-line automation tool (no X!)"
+DESCRIPTION="
+ydotool is not limited to Wayland. You can use it on anything as long as it accepts keyboard/mouse/whatever input. For example, X11, text console, "RetroArch OS", fbdev apps (fbterm/mplayer/SDL1/LittleVGL/Qt Embedded), etc.
+"
+
+LICENCES="AGPL-3"
+SLOT="0"
+PLATFORMS="~amd64 ~x86"
+
+WORK="${WORKBASE}"/"${PN}"-scm
+
+DEPENDENCIES="
+    build:
+        app-doc/scdoc
+"
+
