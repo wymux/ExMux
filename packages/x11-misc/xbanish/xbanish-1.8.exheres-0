@@ -1,0 +1,27 @@
+# Copyright 2022 Edward Bates <gitmux@stemux.com>
+# Distributed under the terms of the GNU General Public License v2
+
+require github [ user='jcs' tag=v${PV} ]
+SUMMARY="Hide the mouse cursor when typing and show it again when the mouse moves"
+DESCRIPTION="
+xbanish hides the mouse cursor when you start typing, and shows it again when the mouse cursor moves or a mouse button is pressed. This is similar to xterm's pointerMode setting, but xbanish works globally in the X11 session.
+"
+
+LICENCES="ISC"
+SLOT="0"
+PLATFORMS="~amd64 ~x86"
+
+DEPENDENCIES="
+    build+run:
+        x11-libs/libX11
+        x11-libs/libXext
+        x11-libs/libXfixes
+        x11-libs/libXi
+"
+
+src_install() {
+    emake install \
+          PREFIX=${IMAGE}/usr/$(exhost --target) \
+          INSTALL_PROGRAM=install
+}
+
