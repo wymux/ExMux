@@ -1,0 +1,18 @@
+# Copyright 2022 Edward Bates <gitmux@stemux.com>
+# Distributed under the terms of the GNU General Public License v2
+
+require pypi
+
+SUMMARY="Simple, powerful, and fast logging for Python."
+DESCRIPTION="
+structlog is the production-ready logging solution for Python
+"
+
+LICENCES="|| (
+    Apache-2.0
+    MIT
+)"
+
+SLOT="0"
+PLATFORMS="~amd64 ~x86"
+
