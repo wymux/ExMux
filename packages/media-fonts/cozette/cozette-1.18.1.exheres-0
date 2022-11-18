@@ -1,0 +1,24 @@
+# Copyright 2022 Edward Bates <gitmux@stemux.com>
+# Distributed under the terms of the GNU General Public License v2
+
+require github [ user='slavfox' ]
+
+SUMMARY="A bitmap programming font optimized for coziness"
+DESCRIPTION="
+Cozette is a 6x13px (bounding box; average 5px character width, 3px descent, 10px ascent, 8px cap height) bitmap font based on Dina, which itself is based on Proggy.
+It's also heavily inspired by Creep.
+"
+
+DOWNLOADS="https://github.com/slavfox/${PN}/releases/download/v.${PV}/CozetteFonts.zip"
+LICENCES="MIT"
+SLOT="0"
+PLATFORMS="~amd64 ~x86"
+
+WORK=${WORKBASE}
+
+src_install() {
+    insinto /usr/share/fonts/X11/${PN}
+    doins CozetteFonts/*.otf
+    doins CozetteFonts/*.ttf
+}
+
