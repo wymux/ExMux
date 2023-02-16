@@ -8,23 +8,29 @@ DESCRIPTION="Iosevka is an open-source, sans-serif + slab-serif, monospace + qua
 "
 HOMEPAGE="https://typeof.net/Iosevka/"
 DOWNLOADS="
-    providers:default?
-    ( https://github.com/be5invis/Iosevka/releases/download/v${PV}/super-ttc-iosevka-${PV}.zip )
-    providers:slab?
-    ( https://github.com/be5invis/Iosevka/releases/download/v${PV}/super-ttc-iosevka-slab-${PV}.zip )
+    providers:aile?
+    ( https://github.com/be5invis/Iosevka/releases/download/v${PV}/super-ttc-iosevka-aile-${PV}.zip )
     providers:curly?
     ( https://github.com/be5invis/Iosevka/releases/download/v${PV}/super-ttc-iosevka-curly-${PV}.zip )
     providers:curly-slab?
     ( https://github.com/be5invis/Iosevka/releases/download/v${PV}/super-ttc-iosevka-curly-${PV}.zip )
+    providers:default?
+    ( https://github.com/be5invis/Iosevka/releases/download/v${PV}/super-ttc-iosevka-${PV}.zip )
+    providers:etoile?
+    ( https://github.com/be5invis/Iosevka/releases/download/v${PV}/super-ttc-iosevka-etoile-${PV}.zip )
+    providers:slab?
+    ( https://github.com/be5invis/Iosevka/releases/download/v${PV}/super-ttc-iosevka-slab-${PV}.zip )
 "
 
 LICENCES="OFL-1.1"
 SLOT="0"
 MYOPTIONS="
     ( providers:
+        aile
         curly
         curly-slab
         default
+        etoile
         slab
     ) [[
         *description = [ Font design ]
