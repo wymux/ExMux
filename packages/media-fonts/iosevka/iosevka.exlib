@@ -13,7 +13,7 @@ DOWNLOADS="
     providers:curly?
     ( https://github.com/be5invis/Iosevka/releases/download/v${PV}/super-ttc-iosevka-curly-${PV}.zip )
     providers:curly-slab?
-    ( https://github.com/be5invis/Iosevka/releases/download/v${PV}/super-ttc-iosevka-curly-${PV}.zip )
+    ( https://github.com/be5invis/Iosevka/releases/download/v${PV}/super-ttc-iosevka-curly-slab-${PV}.zip )
     providers:default?
     ( https://github.com/be5invis/Iosevka/releases/download/v${PV}/super-ttc-iosevka-${PV}.zip )
     providers:etoile?
