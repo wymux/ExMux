@@ -1,0 +1,40 @@
+# Copyright 2023 [ Edward Bates <gitmux@stemux.com> ]
+# Distributed under the terms of the GNU General Public License v2
+
+require github [ user='michaelrsweet' tag=v"${PV}" ]
+
+SUMMARY="PDFio is a simple C library for reading and writing PDF files."
+DESCRIPTION="
+The primary goals of PDFio are:
+
+    Read and write any version of PDF file
+    Provide access to pages, objects, and streams within a PDF file
+    Support reading and writing of encrypted PDF files
+    Extract or embed useful metadata (author, creator, page information, etc.)
+    "Filter" PDF files, for example to extract a range of pages or to embed fonts that are missing from a PDF
+    Provide access to objects used for each page
+
+PDFio is not concerned with rendering or viewing a PDF file, although a PDF RIP or viewer could be written using it.
+"
+
+LICENCES="Apache-2.0"
+SLOT="0"
+PLATFORMS="~amd64 ~x86"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    build+run:
+        sys-libs/zlib[>=1.0]
+"
+
+DEFAULT_SRC_COMPILE_PARAMS=(
+    CC="${CC}"
+    AR=/usr/$(exhost --target)/bin/ar
+    RANLIB=/usr/$(exhost --target)/bin/ranlib
+)
+
+DEFAULT_SRC_INSTALL_PARAMS=(
+    RANLIB=/usr/$(exhost --target)/bin/ranlib
+    prefix=/usr/$(exhost --target)
+)
+
