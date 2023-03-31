@@ -1,0 +1,17 @@
+# Copyright 2023 [ Customize Edward Bates <gitmux@stemux.com> ]
+# Distributed under the terms of the GNU General Public License v2
+
+require github [ user='rvaiya' tag=v${PV}-beta-windows ]
+
+SUMMARY="A modal keyboard-driven virtual pointer."
+DESCRIPTION="
+"
+
+LICENCES="MIT"
+SLOT="0"
+PLATFORMS="~amd64 ~x86"
+
+src_install() {
+    emake DESTDIR="${IMAGE}" PREFIX=/usr/"$(exhost --target)" install
+}
+
