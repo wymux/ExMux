@@ -20,6 +20,42 @@ DOWNLOADS="
     ( https://github.com/be5invis/Iosevka/releases/download/v${PV}/super-ttc-iosevka-etoile-${PV}.zip )
     providers:slab?
     ( https://github.com/be5invis/Iosevka/releases/download/v${PV}/super-ttc-iosevka-slab-${PV}.zip )
+    providers:SS01?
+    ( https://github.com/be5invis/Iosevka/releases/download/v${PV}/super-ttc-iosevka-ss01-${PV}.zip )
+    providers:SS02?
+    ( https://github.com/be5invis/Iosevka/releases/download/v${PV}/super-ttc-iosevka-ss02-${PV}.zip )
+    providers:SS03?
+    ( https://github.com/be5invis/Iosevka/releases/download/v${PV}/super-ttc-iosevka-ss03-${PV}.zip )
+    providers:SS04?
+    ( https://github.com/be5invis/Iosevka/releases/download/v${PV}/super-ttc-iosevka-ss04-${PV}.zip )
+    providers:SS05?
+    ( https://github.com/be5invis/Iosevka/releases/download/v${PV}/super-ttc-iosevka-ss05-${PV}.zip )
+    providers:SS06?
+    ( https://github.com/be5invis/Iosevka/releases/download/v${PV}/super-ttc-iosevka-ss06-${PV}.zip )
+    providers:SS07?
+    ( https://github.com/be5invis/Iosevka/releases/download/v${PV}/super-ttc-iosevka-ss07-${PV}.zip )
+    providers:SS08?
+    ( https://github.com/be5invis/Iosevka/releases/download/v${PV}/super-ttc-iosevka-ss08-${PV}.zip )
+    providers:SS09?
+    ( https://github.com/be5invis/Iosevka/releases/download/v${PV}/super-ttc-iosevka-ss09-${PV}.zip )
+    providers:SS10?
+    ( https://github.com/be5invis/Iosevka/releases/download/v${PV}/super-ttc-iosevka-ss10-${PV}.zip )
+    providers:SS11?
+    ( https://github.com/be5invis/Iosevka/releases/download/v${PV}/super-ttc-iosevka-ss11-${PV}.zip )
+    providers:SS12?
+    ( https://github.com/be5invis/Iosevka/releases/download/v${PV}/super-ttc-iosevka-ss12-${PV}.zip )
+    providers:SS13?
+    ( https://github.com/be5invis/Iosevka/releases/download/v${PV}/super-ttc-iosevka-ss13-${PV}.zip )
+    providers:SS14?
+    ( https://github.com/be5invis/Iosevka/releases/download/v${PV}/super-ttc-iosevka-ss14-${PV}.zip )
+    providers:SS15?
+    ( https://github.com/be5invis/Iosevka/releases/download/v${PV}/super-ttc-iosevka-ss15-${PV}.zip )
+    providers:SS16?
+    ( https://github.com/be5invis/Iosevka/releases/download/v${PV}/super-ttc-iosevka-ss16-${PV}.zip )
+    providers:SS17?
+    ( https://github.com/be5invis/Iosevka/releases/download/v${PV}/super-ttc-iosevka-ss17-${PV}.zip )
+    providers:SS18?
+    ( https://github.com/be5invis/Iosevka/releases/download/v${PV}/super-ttc-iosevka-ss18-${PV}.zip )
 "
 
 LICENCES="OFL-1.1"
@@ -32,6 +68,24 @@ MYOPTIONS="
         default
         etoile
         slab
+        SS01
+        SS02
+        SS03
+        SS04
+        SS05
+        SS06
+        SS07
+        SS08
+        SS09
+        SS10
+        SS11
+        SS12
+        SS13
+        SS14
+        SS15
+        SS16
+        SS17
+        SS18
     ) [[
         *description = [ Font design ]
         number-selected = at-least-one
