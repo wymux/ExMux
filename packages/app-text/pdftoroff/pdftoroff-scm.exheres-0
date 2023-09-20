@@ -1,0 +1,36 @@
+# Copyright 2023 Lee Clark <wymux@shoash.com>
+# Distributed under the terms of the GNU General Public License v2
+
+require github [ user='sgerwk' ]
+
+SUMMARY="view pdf on X11 and the Linux framebuffer; resize pdf; convert pdf to text, html, TeX, groff"
+DESCRIPTION="
+pdf viewer, scaler, converter (to text, html, etc.) by blocks of text
+
+    hovacui: a pdf viewer for the Linux framebuffer and X11
+    pdffit: scale a pdf file to fit a given page size with given margins
+    pdftoroff: convert from pdf to roff, html, text, TeX
+"
+
+LICENCES="GPL-3"
+SLOT="0"
+PLATFORMS="~amd64"
+
+WORK="${WORKBASE}"/"${PN}"-scm
+
+DEPENDENCIES="
+    build+run:
+        app-text/poppler[glib]
+"
+
+DEFAULT_SRC_PREPARE_PATCHES=(
+    "${FILES}"/1.patch
+)
+
+DEFAULT_SRC_COMPILE_PARAMS=(
+    PKG_CONFIG=$(exhost --tool-prefix)pkg-config
+)
+
+DEFAULT_SRC_INSTALL_PARAMS=(
+    PREFIX="/usr/$(exhost --target)"
+)

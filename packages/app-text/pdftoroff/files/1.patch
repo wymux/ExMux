@@ -1,0 +1,39 @@
+diff --git a/Makefile b/Makefile
+index 95b6801..14e3a59 100644
+--- a/Makefile
++++ b/Makefile
+@@ -2,24 +2,24 @@ PROGS=pdftoroff pdffit pdfrects pdfrecur pdfannot \
+ hovacui fbhovacui drmhovacui xhovacui cairoui
+ 
+ CFLAGS+=-g -Wall -Wextra -Wformat -Wformat-security
+-CFLAGS+=${shell pkg-config --cflags poppler-glib}
+-LDLIBS+=${shell pkg-config --libs poppler-glib}
++CFLAGS+=`${PKG_CONFIG} --cflags poppler-glib`
++ LDLIBS+=`${PKG_CONFIG} --libs poppler-glib`
+ fbhovacui drmhovacui hovacui cairoui: LDLIBS+=\
+-	${shell pkg-config --libs ncurses || echo '' -lncurses -ltinfo}
++	`${PKG_CONFIG} --libs ncurses`
+ drmhovacui.o cairoio-drm.o cairodrm.o: CFLAGS+=\
+-	${shell pkg-config --cflags libdrm}
+-drmhovacui hovacui cairodrm: LDLIBS+=${shell pkg-config --libs libdrm}
+-xhovacui hovacui cairoui: LDLIBS+=${shell pkg-config --libs x11}
++	`${PKG_CONFIG} --cflags libdrm`
++drmhovacui hovacui cairodrm: LDLIBS+=`${PKG_CONFIG} --libs libdrm`
++xhovacui hovacui cairoui: LDLIBS+=`${PKG_CONFIG} --libs x11`
+ 
+ all: ${PROGS}
+ 
+ install: all
+ 	mkdir -p ${DESTDIR}/etc
+ 	cp hovacui.conf ${DESTDIR}/etc
+-	mkdir -p ${DESTDIR}/usr/bin
+-	cp hovacui pdfhscript pdfinteractive ${DESTDIR}/usr/bin
+-	cp pdftoroff pdftoebook ${DESTDIR}/usr/bin
+-	cp pdffit pdfrects pdfrecur pdfannot ${DESTDIR}/usr/bin
++	mkdir -p ${DESTDIR}${PREFIX}/bin
++	cp hovacui pdfhscript pdfinteractive ${DESTDIR}${PREFIX}/bin
++	cp pdftoroff pdftoebook ${DESTDIR}${PREFIX}/bin
++	cp pdffit pdfrects pdfrecur pdfannot ${DESTDIR}${PREFIX}/bin
+ 	mkdir -p ${DESTDIR}/usr/share/man/man1
+ 	cp hovacui.1 pdftoroff.1 ${DESTDIR}/usr/share/man/man1
+ 	cp pdffit.1 pdfrects.1 pdfrecur.1 ${DESTDIR}/usr/share/man/man1
