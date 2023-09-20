@@ -1,0 +1,32 @@
+# Copyright 2023 Lee Clark <wymux@shoash.com>
+# Distributed under the terms of the GNU General Public License v2
+
+require cmake
+
+SUMMARY="(Fork of MultiMC)"
+DESCRIPTION="
+Prism Launcher is a custom launcher for Minecraft that allows you to easily manage multiple installations of Minecraft at once.
+"
+DOWNLOADS="https://github.com/PrismLauncher/PrismLauncher/releases/download/7.2/PrismLauncher-7.2.tar.gz"
+
+LICENCES="GPL-3"
+SLOT="0"
+PLATFORMS="~amd64"
+
+DEPENDENCIES="
+    build+run:
+        x11-libs/qt5compat
+        x11-libs/qtbase:6
+    build:
+        kde-frameworks/extra-cmake-modules
+"
+
+CMAKE_SRC_CONFIGURE_PARAMS() {
+   -DCMAKE_BUILD_TYPE=Release
+   -DCMAKE_INSTALL_PREFIX="/usr/$(exhost --target)"
+   -DENABLE_LTO=ON
+}
+
+CMAKE_SRC_INSTALL_PARAMS() {
+    DESTDIR="${IMAGE}"
+}
