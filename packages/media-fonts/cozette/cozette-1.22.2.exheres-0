@@ -9,7 +9,7 @@ Cozette is a 6x13px (bounding box; average 5px character width, 3px descent, 10p
 It's also heavily inspired by Creep.
 "
 
-DOWNLOADS="https://github.com/slavfox/${PN}/releases/download/v.${PV}/CozetteFonts.zip"
+DOWNLOADS="https://github.com/slavfox/${PN}/releases/download/v.${PV}/CozetteFonts-v-1-22-2.zip"
 LICENCES="MIT"
 SLOT="0"
 PLATFORMS="~amd64 ~x86"
@@ -18,7 +18,7 @@ WORK=${WORKBASE}
 
 src_install() {
     insinto /usr/share/fonts/X11/${PN}
-    doins CozetteFonts/*.otf
-    doins CozetteFonts/*.ttf
+    doins CozetteFonts/${PN}_hidpi*
+    doins CozetteFonts/${PN}*
 }
 
