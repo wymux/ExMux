@@ -1,0 +1,17 @@
+# Copyright 2023 Lee Clark <wymux@shoash.com>
+# Distributed under the terms of the GNU General Public License v2
+
+require github [ user='rvaiya' tag=v${PV} ]
+
+SUMMARY="A key remapping daemon for linux."
+DESCRIPTION="Linux lacks a good key remapping solution. In order to achieve satisfactory results a medley of tools need to be employed (e.g xcape, xmodmap) with the end result often being tethered to a specified environment (X11). keyd attempts to solve this problem by providing a flexible system wide daemon which remaps keys using kernel level input primitives (evdev, uinput)."
+
+SLOT="0"
+LICENCES="MIT"
+PLATFORMS="~amd64"
+
+src_install() {
+    emake install DESTDIR="${IMAGE}" PREFIX=/usr/$(exhost --target)
+    rmdir "${IMAGE}"/etc/"${PN}"
+    rmdir "${IMAGE}"/etc/
+}
