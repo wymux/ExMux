@@ -1,0 +1,15 @@
+# Copyright 2023 [ Customize Edward Bates <gitmux@stemux.com> ]
+# Distributed under the terms of the GNU General Public License v2
+
+require cmake
+require github [ user='ibireme' ]
+
+SUMMARY="The fastest JSON library in C."
+DESCRIPTION="
+A high performance JSON library written in ANSI C.
+"
+
+LICENCES="MIT"
+SLOT="0"
+PLATFORMS="~amd64 ~x86"
+
