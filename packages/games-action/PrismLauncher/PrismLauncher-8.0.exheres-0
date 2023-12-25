@@ -7,7 +7,7 @@ SUMMARY="(Fork of MultiMC)"
 DESCRIPTION="
 Prism Launcher is a custom launcher for Minecraft that allows you to easily manage multiple installations of Minecraft at once.
 "
-DOWNLOADS="https://github.com/PrismLauncher/PrismLauncher/releases/download/7.2/PrismLauncher-7.2.tar.gz"
+DOWNLOADS="https://github.com/${PN}/${PN}/releases/download/${PV}/${PNV}.tar.gz"
 
 LICENCES="GPL-3"
 SLOT="0"
