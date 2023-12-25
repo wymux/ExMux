@@ -6,7 +6,7 @@ require alternatives
 DESCRIPTION="Prebuilt Java JDK binaries provided by Bellsoft
 "
 HOMEPAGE="https://bell-sw.com/"
-DOWNLOADS="https://download.bell-sw.com/java/17.0.7+7/bellsoft-jdk17.0.7+7-linux-x64-musl.tar.gz"
+DOWNLOADS="https://download.bell-sw.com/java/17.0.9+11/bellsoft-jdk17.0.9+11-linux-amd64-full.tar.gz"
 
 LICENCES="Liberica End User License Agreement"
 SLOT="0"
@@ -18,7 +18,7 @@ DEPENDENCIES="
         alsa? ( sys-sound/alsa-lib )
 "
 
-WORK=${WORKBASE}/jdk-17.0.7
+WORK=${WORKBASE}/jdk-17.0.9-full
 
 pkg_setup() {
     exdirectory --allow /opt
