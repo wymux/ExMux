@@ -1,7 +1,9 @@
 # Copyright 2022 Edward Bates <gitmux@stemux.com>
+# Copyright 2024 Lee Clark <wymux@shoash.com>
 # Distributed under the terms of the GNU General Public License v2
 
 require iosevka
 
 SLOT="0"
 PLATFORMS="~amd64 ~x86"
+
