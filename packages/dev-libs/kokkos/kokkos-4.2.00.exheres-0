@@ -1,0 +1,29 @@
+# Copyright 2024 Lee Clark <wymux@shoash.com>
+# Distributed under the terms of the GNU General Public License v2
+
+require cmake github
+
+SUMMARY="Kokkos C++ Performance Portability Programming Ecosystem: The Programming Model - Parallel Execution and Memory Abstraction"
+DESCRIPTION="
+Kokkos Core implements a programming model in C++ for writing performance portable applications targeting all major HPC platforms.
+"
+
+LICENCES="Apache-2.0"
+SLOT="0"
+PLATFORMS="~amd64"
+
+src_configure() {
+    mkdir build && cd build
+    ecmake
+}
+
+src_compile() {
+    cd build
+    make -j4
+}
+
+src_install() {
+    cd build
+    cmake_src_install
+}
+
