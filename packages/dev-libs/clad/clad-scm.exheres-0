@@ -1,0 +1,43 @@
+# Copyright 2024 Lee Clark <wymux@shoash.com>
+# Distributed under the terms of the GNU General Public License v2
+
+SCM_REPOSITORY="https://github.com/vgvassilev/clad.git"
+
+require cmake scm-git
+
+SUMMARY="clad -- automatic differentiation for C/C++"
+DESCRIPTION="
+Clad enables automatic differentiation (AD) for C++. It is based on LLVM compiler infrastructure and is a plugin for Clang compiler.
+"
+
+LICENCES=""
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS=""
+
+DEPENDENCIES="
+"
+
+WORK="${WORKBASE}"/${PN}-scm
+
+CMAKE_SRC_CONFIGURE_PARAMS=(
+    -DLLVM_DIR=/usr/$(exhost --target)/lib/llvm/17
+    -DCMAKE_INSTALL_PREFIX=/usr/$(exhost --target)
+    -DLLVM_EXTERNAL_LIT=/usr/$(exhost --target)/bin/lit
+)
+
+src_configure() {
+    mkdir build && cd build
+    cmake_src_configure
+}
+
+src_compile() {
+    cd build
+    cmake_src_compile
+}
+
+src_install() {
+    cd build
+    cmake_src_install
+}
+
